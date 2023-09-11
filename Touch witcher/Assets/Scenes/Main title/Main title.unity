@@ -1501,6 +1501,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 821591325}
+  - {fileID: 1292512101}
   - {fileID: 578582190}
   - {fileID: 2141542960}
   - {fileID: 606901174}
@@ -1508,7 +1509,6 @@ RectTransform:
   - {fileID: 1436417944}
   - {fileID: 1322199419}
   - {fileID: 1847224204}
-  - {fileID: 1292512101}
   m_Father: {fileID: 784257829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2241,7 +2241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 170, y: -224}
+  m_AnchoredPosition: {x: 520, y: -120}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292512102
@@ -2290,7 +2290,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2021463934}
+        m_TargetAssemblyTypeName: fullScreen, Assembly-CSharp
+        m_MethodName: Pc
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1296052870
 GameObject:
@@ -3562,6 +3574,7 @@ GameObject:
   - component: {fileID: 2021463932}
   - component: {fileID: 2021463931}
   - component: {fileID: 2021463933}
+  - component: {fileID: 2021463934}
   m_Layer: 0
   m_Name: OptionControler
   m_TagString: Untagged
@@ -3614,6 +3627,19 @@ MonoBehaviour:
   slider: {fileID: 1322199420}
   sliderValue: 0
   panelBrillo: {fileID: 1847224205}
+--- !u!114 &2021463934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021463930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009d1ab63daa9ad4d82b3c1cb079b081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggle: {fileID: 1292512102}
 --- !u!1 &2030901699
 GameObject:
   m_ObjectHideFlags: 0
