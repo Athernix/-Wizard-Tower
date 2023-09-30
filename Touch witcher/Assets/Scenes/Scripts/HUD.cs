@@ -5,12 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 public class HUD : MonoBehaviour
 {   
-   public GameManager gameManager;
    public TextMeshProUGUI puntos;
    public   GameObject[] vidas;
    public   GameObject[] mana;
    void Update(){
-    puntos.text = gameManager.Puntos_Totales.ToString();
+    puntos.text = GameManager.Instance.Puntos_Totales.ToString();
    }
    public void Actualizar_Puntos(int Puntos_Totales){
       puntos.text = Puntos_Totales.ToString();

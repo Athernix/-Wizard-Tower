@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Posiones_Mana : MonoBehaviour
 {
-    public GameManager gameManager;
       
        private void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("Player")){
