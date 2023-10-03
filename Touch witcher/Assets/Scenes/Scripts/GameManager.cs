@@ -6,12 +6,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {  
-    public static GameManager Instance { get; private set; } 
-    public int Puntos_Totales{get{return puntos_totales;}}
-    public HUD hUD;
-    private int vidas = 3;
+       public static GameManager Instance { get; private set; }
+    
+	public HUD hUD;
+
+    public int puntos_totales {get; private set;}
+
+	private int vidas = 3;
     private int mana = 3 ;
-    private int puntos_totales;
+   
     private void Awake()
     {
         if (Instance == null)
@@ -29,21 +32,30 @@ public class GameManager : MonoBehaviour
         hUD.Actualizar_Puntos(puntos_totales);
     }
     //vida
-     public void Perder_Vida(){
-        vidas = vidas -1;
-        if(vidas == 0){
-            //IR AL MENU PRINCIPAL
-            SceneManager.LoadScene(0);
-        }
-        hUD.Desactivar_Vidas(vidas);
-     }
+     public void Perder_Vida() {
+		vidas -= 1;
+
+		if(vidas == 0)
+		{
+			// Reiniciamos el nivel.
+			SceneManager.LoadScene(1);
+		}
+
+		hUD.Desactivar_Vidas(vidas);
+	}
      //Mana
      public void Perder_Mana(){
-        mana = mana -1;
+        mana -= mana -1;
         hUD.Desactivar_Mana(mana);
      }
-     public void recuperar_Mana() {
+     public bool recuperar_Mana() {
+        if (mana == 3)
+		{
+			return false;
+		}
+
 		hUD.Activar_Mana(mana);
-        mana += 1;
-}
+		mana += 1;
+		return true;
+	}
 }

@@ -4,25 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class TMain : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    
+    public void Play(){
+        SceneManager.LoadScene("Jugar");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Tutorial(){
+        SceneManager.LoadScene("Tutorial");
     }
-    public void cargarscena(){
-        SceneManager.LoadScene("Play");
-    }
-    public void cargar(string Option){
-        SceneManager.LoadScene(Option);
-    }
-    public void quit(){
+    public void Quit(){
         Application.Quit();
     }
 }
