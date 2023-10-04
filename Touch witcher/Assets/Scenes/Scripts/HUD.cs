@@ -8,6 +8,7 @@ public class HUD : MonoBehaviour
 {   
    public GameMenu opciones;
    public TextMeshProUGUI puntos;
+   public TextMeshProUGUI llaves;
    public   GameObject[] vidas;
    public   GameObject[] mana;
    void Update(){
@@ -15,6 +16,10 @@ public class HUD : MonoBehaviour
    }
    public void Actualizar_Puntos(int Puntos_Totales){
       puntos.text = Puntos_Totales.ToString();
+   }
+   //Llaves
+ public void Actualizar_Llaves(int Puntos_Totales_Llaves){
+      llaves.text = Puntos_Totales_Llaves.ToString();
    }
    //Vida
    public void Desactivar_Vidas(int indice) {

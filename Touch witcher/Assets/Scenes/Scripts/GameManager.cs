@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {  
@@ -27,8 +28,7 @@ public class GameManager : MonoBehaviour
         }
     }
     public void sumar_puntos(int puntos_a_Sumar){
-        puntos_totales =+ puntos_a_Sumar;
-        Debug.Log(puntos_totales);
+        puntos_totales += puntos_a_Sumar;
         hUD.Actualizar_Puntos(puntos_totales);
     }
     //vida
@@ -58,4 +58,11 @@ public class GameManager : MonoBehaviour
 		mana += 1;
 		return true;
 	}
+    //llaves
+    private float llaves;
+
+public void sumar_Llaves(float Puntos_Totales_Llaves){
+    llaves += Puntos_Totales_Llaves;
+hUD.Actualizar_Llaves(puntos_totales);
+}
 }
