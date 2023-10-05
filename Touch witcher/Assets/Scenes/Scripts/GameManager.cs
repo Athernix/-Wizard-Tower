@@ -63,6 +63,6 @@ public class GameManager : MonoBehaviour
 
 public void sumar_Llaves(float Puntos_Totales_Llaves){
     llaves += Puntos_Totales_Llaves;
-hUD.Actualizar_Llaves(puntos_totales);
+hUD.Actualizar_Llaves(Puntos_Totales_Llaves);
 }
 }
