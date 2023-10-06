@@ -4,22 +4,34 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-public class HUD : MonoBehaviour
-{   
+public class HUD : MonoBehaviour{   
    public GameMenu opciones;
    public TextMeshProUGUI puntos;
    public TextMeshProUGUI llaves;
    public   GameObject[] vidas;
-   public   GameObject[] mana;
+   //mana
+   public  Image Manabar;
+   public float Mymana;
+   private float currentmana;
+   void Start(){
+      currentmana = Mymana;
+   }
    void Update(){
     puntos.text = GameManager.Instance.puntos_totales.ToString();
+     if(currentmana< Mymana){
+         Manabar.fillAmount = Mathf.MoveTowards(Manabar.fillAmount,1f,Time.deltaTime * 0.01f);
+         currentmana = Mathf.MoveTowards(currentmana/Mymana,1f,Time.deltaTime * 0.01f)* Mymana;
+      }   
+      if(currentmana < 0){
+         currentmana = 0;
+      }
    }
    public void Actualizar_Puntos(int Puntos_Totales){
       puntos.text = Puntos_Totales.ToString();
    }
    //Llaves
  public void Actualizar_Llaves(int Puntos_Totales_Llaves){
-      llaves.text = Puntos_Totales_Llaves.ToString();
+      llaves.text = Puntos_Totales_Llaves.ToString("0");
    }
    //Vida
    public void Desactivar_Vidas(int indice) {
@@ -28,13 +40,12 @@ public class HUD : MonoBehaviour
    public void  Activar_Vidas(int indice){
       vidas[indice].SetActive(true);
    }
-   //Mana
-   public void Desactivar_Mana(int indice){
-      mana[indice].SetActive(false);
-   }
-   public void  Activar_Mana(int indice){
-      mana[indice].SetActive(true);
-   }
+   //mana
+   public void reduce_mana(float mana){
+         currentmana -= mana;
+         Manabar.fillAmount -= mana / Mymana;
+
+      }
 //Opciones
 [SerializeField] private GameObject boton_Opciones;
 [SerializeField] private GameObject Opciones_Menu;
@@ -54,3 +65,4 @@ public void salir(){
 SceneManager.LoadScene(0);
 }   
 }
+

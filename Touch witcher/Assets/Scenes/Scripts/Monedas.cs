@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Monedas : MonoBehaviour
 {
 
@@ -15,6 +14,7 @@ public class Monedas : MonoBehaviour
             gameManager.sumar_puntos(valor);
             Destroy(this.gameObject);
         }
+
         
     }
 }

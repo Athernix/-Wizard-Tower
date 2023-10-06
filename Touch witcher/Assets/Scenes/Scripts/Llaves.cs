@@ -5,7 +5,7 @@ using UnityEngine;
 public class Llaves : MonoBehaviour
 {
 
-    public float llaves ;
+    public int llaves ;
     public GameManager gameManager;
 
     private void OnTriggerEnter2D(Collider2D collision)

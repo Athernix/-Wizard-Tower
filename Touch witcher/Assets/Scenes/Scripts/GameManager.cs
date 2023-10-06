@@ -43,25 +43,10 @@ public class GameManager : MonoBehaviour
 
 		hUD.Desactivar_Vidas(vidas);
 	}
-     //Mana
-     public void Perder_Mana(){
-        mana -= mana -1;
-        hUD.Desactivar_Mana(mana);
-     }
-     public bool recuperar_Mana() {
-        if (mana == 3)
-		{
-			return false;
-		}
-
-		hUD.Activar_Mana(mana);
-		mana += 1;
-		return true;
-	}
     //llaves
     private float llaves;
 
-public void sumar_Llaves(float Puntos_Totales_Llaves){
+public void sumar_Llaves(int Puntos_Totales_Llaves){
     llaves += Puntos_Totales_Llaves;
 hUD.Actualizar_Llaves(Puntos_Totales_Llaves);
 }
