@@ -1,53 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine.SceneManagement;
 using UnityEngine;
-using TMPro;
 
 public class GameManager : MonoBehaviour
-{  
-       public static GameManager Instance { get; private set; }
-    
-	public HUD hUD;
+{
+    public static GameManager Instance;
 
-    public int puntos_totales {get; private set;}
+    public int puntos_totales;
+    public int llaves_totales;
+    public int vidas;
 
-	private int vidas = 3;
-    private int mana = 3 ;
-   
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Debug.Log("Cuidado! Mas de un GameManager en escena.");
-        }
+        Instance = this;
     }
-    public void sumar_puntos(int puntos_a_Sumar){
-        puntos_totales += puntos_a_Sumar;
-        hUD.Actualizar_Puntos(puntos_totales);
+
+    // Métodos para sumar y restar puntos
+    public void sumar_puntos(int puntos)
+    {
+        puntos_totales += puntos;
     }
-    //vida
-     public void Perder_Vida() {
-		vidas -= 1;
 
-		if(vidas == 0)
-		{
-			// Reiniciamos el nivel.
-			SceneManager.LoadScene(1);
-		}
+    public void restar_puntos(int puntos)
+    {
+        puntos_totales -= puntos;
+    }
 
-		hUD.Desactivar_Vidas(vidas);
-	}
-    //llaves
-    private float llaves;
+    // Métodos para sumar y restar llaves
+    public void sumar_Llaves(int llaves)
+    {
+        llaves_totales += llaves;
+    }
 
-public void sumar_Llaves(int Puntos_Totales_Llaves){
-    llaves += Puntos_Totales_Llaves;
-hUD.Actualizar_Llaves(Puntos_Totales_Llaves);
-}
+    public void restar_Llaves(int llaves)
+    {
+        llaves_totales -= llaves;
+    }
+
+    // Métodos para sumar y restar vidas
+    public void ganar_vida()
+    {
+        vidas++;
+    }
+
+    public void perder_vida()
+    {
+        vidas--;
+    }
+
+    // Comprueba si el jugador ha muerto
+    public bool isDead()
+    {
+        return vidas <= 0;
+    }
 }

@@ -24,6 +24,12 @@ public class HUD : MonoBehaviour{
       }   
       if(currentmana < 0){
          currentmana = 0;
+         // Corrección: comprobar si Mymana es igual a cero antes de dividir
+         if (Mymana == 0) {
+             Manabar.fillAmount = 0f;
+         } else {
+             Manabar.fillAmount = currentmana / Mymana;
+         }
       }
    }
    public void Actualizar_Puntos(int Puntos_Totales){
@@ -43,8 +49,12 @@ public class HUD : MonoBehaviour{
    //mana
    public void reduce_mana(float mana){
          currentmana -= mana;
-         Manabar.fillAmount -= mana / Mymana;
-
+         // Corrección: comprobar si Mymana es igual a cero antes de dividir
+         if (Mymana == 0) {
+             Manabar.fillAmount = 0f;
+         } else {
+             Manabar.fillAmount = currentmana / Mymana;
+         }
       }
 //Opciones
 [SerializeField] private GameObject boton_Opciones;
@@ -65,4 +75,3 @@ public void salir(){
 SceneManager.LoadScene(0);
 }   
 }
-
