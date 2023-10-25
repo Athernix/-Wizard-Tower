@@ -9,10 +9,12 @@ public class Mov_Player : MonoBehaviour
     public int maxGridMoveDistance;
     int moves;
     bool moveH,moveV;
+    private new Rigidbody2D RB;
 
     private void Start() 
     {
-        moves = maxGridMoveDistance;        
+        moves = maxGridMoveDistance;
+        RB = GetComponent<Rigidbody2D>();    
     }
 
     // Update is called once per frame
@@ -21,8 +23,10 @@ public class Mov_Player : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         //direction = new Vector2(h,v).normalized;
-
-        transform.position = Vector2.MoveTowards(transform.position,movePosition.position,speed*Time.deltaTime);
+        
+        
+        
+        RB.position = Vector2.MoveTowards(transform.position , movePosition.position , speed*Time.deltaTime);
         
         if(h != 0)
         {
