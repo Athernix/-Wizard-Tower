@@ -17571,7 +17571,7 @@ Tilemap:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -17, y: -51, z: 0}
   m_Size: {x: 18, y: 96, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileAnchor: {x: 0.5, y: 0.4, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1
@@ -17870,7 +17870,7 @@ Transform:
   m_GameObject: {fileID: 883332344}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.518797, y: -48.49596, z: -10}
+  m_LocalPosition: {x: -32.904797, y: -42.90796, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18046,7 +18046,7 @@ Transform:
   m_GameObject: {fileID: 1095749011}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5187974, y: -48.49596, z: -10}
+  m_LocalPosition: {x: -32.904797, y: -42.90796, z: -10}
   m_LocalScale: {x: -1.7852134, y: -1.3165948, z: -1.7852134}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -18235,7 +18235,7 @@ Transform:
   m_GameObject: {fileID: 1665180543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -25.4, y: 2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18439,8 +18439,8 @@ Transform:
   m_GameObject: {fileID: 2101422338}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1.0029, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1665180545}
@@ -20908,7 +20908,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -17.6, y: -3}
+  m_Offset: {x: -17.95, y: -3.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -20919,7 +20919,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 97}
+  m_Size: {x: 2, y: 97}
   m_EdgeRadius: 0
 --- !u!61 &2101422343
 BoxCollider2D:
@@ -20953,7 +20953,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.57, y: -2.5}
+  m_Offset: {x: 2, y: -3.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -20964,7 +20964,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 97}
+  m_Size: {x: 2, y: 97}
   m_EdgeRadius: 0
 --- !u!61 &2101422344
 BoxCollider2D:
@@ -20998,7 +20998,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -8, y: -52.5}
+  m_Offset: {x: -7.89, y: -51.72}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -21009,7 +21009,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 28.21, y: 5}
+  m_Size: {x: 21.7, y: 2}
   m_EdgeRadius: 0
 --- !u!61 &2101422345
 BoxCollider2D:
@@ -21043,7 +21043,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -8, y: 47}
+  m_Offset: {x: -8, y: 45.9}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -21054,7 +21054,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30.9, y: 10}
+  m_Size: {x: 21.9, y: 2}
   m_EdgeRadius: 0
 --- !u!1001 &1635569689422511594
 PrefabInstance:
@@ -21066,11 +21066,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6357108755101485499, guid: 21d1e290a20391a42a386903250300f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1334.86
+      value: -1359.3
       objectReference: {fileID: 0}
     - target: {fileID: 6357108755101485499, guid: 21d1e290a20391a42a386903250300f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.07
+      value: 15.2
       objectReference: {fileID: 0}
     - target: {fileID: 6357108755101485499, guid: 21d1e290a20391a42a386903250300f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21152,11 +21152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2097273504519555431, guid: 5491ea96c77e2d043ba132eccc970af9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.714
+      value: -28.1
       objectReference: {fileID: 0}
     - target: {fileID: 2097273504519555431, guid: 5491ea96c77e2d043ba132eccc970af9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.388
+      value: -9.8
       objectReference: {fileID: 0}
     - target: {fileID: 3273841198522001344, guid: 5491ea96c77e2d043ba132eccc970af9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -21325,11 +21325,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7433461931822377464, guid: 2ce2863a720b5d2439d8ef77f5f8229b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1333.12
+      value: -1356.6
       objectReference: {fileID: 0}
     - target: {fileID: 7433461931822377464, guid: 2ce2863a720b5d2439d8ef77f5f8229b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.76
+      value: 13.1
       objectReference: {fileID: 0}
     - target: {fileID: 7433461931822377464, guid: 2ce2863a720b5d2439d8ef77f5f8229b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21386,11 +21386,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9213362921566131284, guid: 95303991ed715bb49a1cff4f8d3307ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.5
+      value: -39.9
       objectReference: {fileID: 0}
     - target: {fileID: 9213362921566131284, guid: 95303991ed715bb49a1cff4f8d3307ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -44.511
+      value: -39.4
       objectReference: {fileID: 0}
     - target: {fileID: 9213362921566131284, guid: 95303991ed715bb49a1cff4f8d3307ee, type: 3}
       propertyPath: m_LocalPosition.z
