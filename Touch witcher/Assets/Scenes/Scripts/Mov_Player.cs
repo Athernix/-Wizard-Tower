@@ -10,19 +10,30 @@ public class Mov_Player : MonoBehaviour
     int moves;
     bool moveH,moveV;
     private new Rigidbody2D RB;
-
+    [SerializeField] private Animator anim;
     private void Start() 
     {
         moves = maxGridMoveDistance;
-        RB = GetComponent<Rigidbody2D>();    
+        RB = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //direction = new Vector2(h,v).normalized;
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-        //direction = new Vector2(h,v).normalized;
+        //Animación
+        anim.SetFloat("Horizontal", h);
+        anim.SetFloat("Vertical",v);
+        if (h != 0 || v !=0 ){
+            anim.SetFloat("UltiHori",h);
+            anim.SetFloat("UltiVert", v);
+        }
+        
+
         
         
         
@@ -53,6 +64,7 @@ public class Mov_Player : MonoBehaviour
                 movePosition.position = new Vector2(movePosition.position.x - 1,movePosition.position.y);
             }
             moves--;
+            
         }
         
         if(moveV && moves > 0)
@@ -65,6 +77,8 @@ public class Mov_Player : MonoBehaviour
                 movePosition.position = new Vector2(movePosition.position.x ,movePosition.position.y - 1);
             }
             moves--;
+           
+
         }
     }
 }
