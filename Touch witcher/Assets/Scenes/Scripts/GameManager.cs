@@ -1,54 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static GameManager Instance;
 
-    public HUD hud;
-    public Barra_vida barra_Vida;
-
-    public int PuntosTotales { get; private set; }
-
+    public int puntos_totales;
+    public int llaves_totales;
+    public int vidas;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Debug.Log("Cuidado! Mas de un GameManager en escena.");
-        }
+        Instance = this;
     }
 
-    public void SumarPuntos(int puntosASumar)
+    // Métodos para sumar y restar puntos
+    public void sumar_puntos(int puntos)
     {
-        PuntosTotales += puntosASumar;
-        hud.ActualizarPuntos(PuntosTotales);
+        puntos_totales += puntos;
     }
-    //Vida
-    public int maxHealth = 100;
-    public int currentHealth;
 
-    public void Max_Healt() {
-    currentHealth = maxHealth;
-    barra_Vida.SetMaxHealth(maxHealth);
+    public void restar_puntos(int puntos)
+    {
+        puntos_totales -= puntos;
     }
-    public void dam() {
-    if(Input.GetKeyDown(KeyCode.Space)){
-    TakeDamage(25);
+
+    // Métodos para sumar y restar llaves
+    public void sumar_Llaves(int llaves)
+    {
+        llaves_totales += llaves;
     }
+
+    public void restar_Llaves(int llaves)
+    {
+        llaves_totales -= llaves;
     }
-    void TakeDamage(int damage){
-    currentHealth -= damage;
-    barra_Vida.SetHealth(currentHealth);
-        if (currentHealth == 0){
-            SceneManager.LoadScene(1);
-        }
+
+    // Métodos para sumar y restar vidas
+    public void ganar_vida()
+    {
+        vidas++;
     }
-    
+
+    public void perder_vida()
+    {
+        vidas--;
+    }
+
+    // Comprueba si el jugador ha muerto
+    public bool isDead()
+    {
+        return vidas <= 0;
+    }
 }
