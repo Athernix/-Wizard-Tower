@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Mov_obs : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
     [SerializeField] String Direccion;
     private Vector3 j;
-     public Barra_vida barra_Vida;
     void Awake()
     {
         j = transform.position;
@@ -27,20 +25,17 @@ public class Mov_obs : MonoBehaviour
         else if (Direccion.Equals("Up")) { transform.Translate(Vector2.up * speed * Time.deltaTime); }
      }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D (Collider2D collider2D)
     {
-        if (other.gameObject.CompareTag("Player")){
-            TakeDamage(25);
-
+        if (collider2D.CompareTag("Player"))
+        {
+            //GameManager.Instance.Perder_Vida();
+            Debug.Log("-1 vida");
         }
-    void TakeDamage(int damage){
-    GameManager.Instance.currentHealth -= damage;
-    barra_Vida.SetHealth(GameManager.Instance.currentHealth);
-    if (GameManager.Instance.currentHealth == 0){
-    SceneManager.LoadScene(1);
+        else if (collider2D.CompareTag("Pared")) 
+        {
+            transform.position = j;
         }
     }
-    }
-    
 
 }
