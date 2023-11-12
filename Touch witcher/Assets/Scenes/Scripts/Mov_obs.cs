@@ -31,15 +31,21 @@ public class Mov_obs : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player")){
             TakeDamage(25);
-
         }
-    void TakeDamage(int damage){
-    GameManager.Instance.currentHealth -= damage;
-    barra_Vida.SetHealth(GameManager.Instance.currentHealth);
-    if (GameManager.Instance.currentHealth == 0){
-    SceneManager.LoadScene(1);
+        else if (other.gameObject.CompareTag("Pared"))
+        {
+            transform.position = j;
         }
-    }
+    
+    }//no me acurdo como era el codigo XD
+    void TakeDamage(int damage)
+    {
+        GameManager.Instance.currentHealth -= damage;
+        barra_Vida.SetHealth(GameManager.Instance.currentHealth);
+        if (GameManager.Instance.currentHealth == 0)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
     
 
