@@ -10,8 +10,10 @@ public class Mov_obs : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
     [SerializeField] String Direccion;
+    [SerializeField] GameObject colision;
     private Vector3 j;
-     public Barra_vida barra_Vida;
+    public Barra_vida barra_Vida;
+
     void Awake()
     {
         j = transform.position;
@@ -32,12 +34,13 @@ public class Mov_obs : MonoBehaviour
         if (other.gameObject.CompareTag("Player")){
             TakeDamage(25);
         }
-        else if (other.gameObject.CompareTag("Pared"))
+        if (other.gameObject.CompareTag("llegada"))
         {
             transform.position = j;
         }
-    
-    }//no me acurdo como era el codigo XD
+
+
+    }
     void TakeDamage(int damage)
     {
         GameManager.Instance.currentHealth -= damage;

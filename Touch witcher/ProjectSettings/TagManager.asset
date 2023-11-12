@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cielo
   - Pared
+  - llegada
   layers:
   - Default
   - TransparentFX
