@@ -6,10 +6,10 @@ public class TMain : MonoBehaviour
 {
     
     public void Play(){
-        SceneManager.LoadScene("Jugar");
+        SceneManager.LoadScene("Jugar", LoadSceneMode.Single);
     }
     public void Tutorial(){
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
     }
     public void Quit(){
         Application.Quit();

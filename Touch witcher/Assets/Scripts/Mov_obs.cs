@@ -10,24 +10,24 @@ public class Mov_obs : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
     [SerializeField] String Direccion;
-    [SerializeField] GameObject colision;
-    private Vector3 j;
+    private Vector3 posicion;
     public Barra_vida barra_Vida;
+    private Transform player;
+    
 
-    void Awake()
+    private void Awake()
     {
-        j = transform.position;
+        
+        
+        posicion = this.gameObject.transform.position;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Direccion.Equals("Right")) { transform.Translate(Vector2.right * speed * Time.deltaTime); }
-        else if (Direccion.Equals("Left")) { transform.Translate(Vector2.left * speed * Time.deltaTime); }
-        else if (Direccion.Equals("Down")) { transform.Translate(Vector2.down * speed * Time.deltaTime); }
-        else if (Direccion.Equals("Up")) { transform.Translate(Vector2.up * speed * Time.deltaTime); }
-     }
+        Movimiento(Direccion);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,7 +36,7 @@ public class Mov_obs : MonoBehaviour
         }
         if (other.gameObject.CompareTag("llegada"))
         {
-            transform.position = j;
+            transform.position = posicion;
         }
 
 
@@ -49,6 +49,13 @@ public class Mov_obs : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+    }
+    private void Movimiento(string Direct)
+    {
+        if (Direct.Equals("Right")) { transform.Translate(Vector2.right * speed * Time.deltaTime); }
+        else if (Direct.Equals("Left")) { transform.Translate(Vector2.left * speed * Time.deltaTime); }
+        else if (Direct.Equals("Down")) { transform.Translate(Vector2.down * speed * Time.deltaTime); }
+        else if (Direct.Equals("Up")) { transform.Translate(Vector2.up * speed * Time.deltaTime); }
     }
     
 
