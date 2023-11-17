@@ -6,11 +6,11 @@ public class LogicScenas : MonoBehaviour
 {
     private void  Awake()
     {
-        var noDestruirEntreScenas = FindObjectOfType<LogicScenas>();
-        if(noDestruirEntreScenas){
-            Destroy(gameObject);
-            return;
-        }
+        var noDestruirEntreScenas = FindObjectsOfType<LogicScenas>();
+        //if(noDestruirEntreScenas.Length > 1){
+        //    Destroy(gameObject);
+        //    return;
+        //}
         DontDestroyOnLoad(gameObject);
     }
 }
